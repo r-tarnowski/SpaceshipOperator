@@ -21,7 +21,7 @@ include_directories(${INCLUDE_DIR} "/export/devel/platform/boost/$ENV{BOOST_VERS
 link_directories( ${LIB_DIR} )
 #set(APP_LINK_LIBS ${TARGET_LIB} dcpsisocpp2 ddskernel dl pthread)
 
-set(CMAKE_CXX_FLAGS "-fPIC -O3 -Wall -Wno-unused-function -std=c++17")
+set(CMAKE_CXX_FLAGS "-fPIC -O3 -Wall -Wno-unused-function -std=c++20")
 
 set(SOURCES_BEFORE_CPP20 ${SRC_DIR}/ComparisonOperatorsBeforeCpp20.cpp)
 
