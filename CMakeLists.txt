@@ -12,6 +12,7 @@ set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${LIB_DIR})
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${BIN_DIR})
 
 set(TARGET_BEFORE_CPP20 before_cpp20)
+set(TARGET_SPACESHIP_IMPLEMENTATION spaceship_implementation)
 
 
 
@@ -24,6 +25,7 @@ link_directories( ${LIB_DIR} )
 set(CMAKE_CXX_FLAGS "-fPIC -O3 -Wall -Wno-unused-function -std=c++20")
 
 set(SOURCES_BEFORE_CPP20 ${SRC_DIR}/ComparisonOperatorsBeforeCpp20.cpp)
+set(SOURCES_SPACESHIP_IMPLEMENTATION ${SRC_DIR}/SpaceshipImplementation.cpp)
 
 
 
@@ -32,6 +34,8 @@ set(SOURCES_BEFORE_CPP20 ${SRC_DIR}/ComparisonOperatorsBeforeCpp20.cpp)
 #add_library(${TARGET_LIB} STATIC ${SOURCES_LIB})
 
 add_executable(${TARGET_BEFORE_CPP20} ${SOURCES_BEFORE_CPP20})
+add_executable(${TARGET_SPACESHIP_IMPLEMENTATION} ${SOURCES_SPACESHIP_IMPLEMENTATION})
+
 
 
 #target_link_libraries(${TARGET_SUB} ${APP_LINK_LIBS})

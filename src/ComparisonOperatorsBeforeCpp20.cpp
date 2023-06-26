@@ -1,11 +1,6 @@
 #include <iostream>
 
-#include <vector>
-#include <set>
 #include <ranges>
-#include <map>
-#include <list>
-
 
 using std::cout;
 using std::endl;
