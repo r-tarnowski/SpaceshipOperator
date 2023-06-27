@@ -89,5 +89,9 @@ int main(int argc, char *argv[]) {
     std::cout << "( v1 >= v3 ) -> " << ( v1 >= v3 ) << std::endl << std::endl;
     std::cout << "( v3 >= v1 ) -> " << ( v3 >= v1 ) << std::endl << std::endl;
 
+    std::cout << "( 0 > 1 <=> 2 ) -> " << ( 0 > 1 <=> 2 )  << std::endl << std::endl;
+    std::cout << "( 0 == 2 <=> 2 ) -> " << ( 0 == 2 <=> 2 )  << std::endl << std::endl;
+    std::cout << "( 0 < 3 <=> 2 ) -> " << ( 0 < 3 <=> 2 )  << std::endl << std::endl;
+
     return 0;
 }
