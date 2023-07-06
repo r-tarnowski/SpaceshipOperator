@@ -53,7 +53,14 @@ int main( int argc, char *argv[] ) {
 
     PersonIntVal donald( 102,  "Donald", "Duck" );
     PersonIntVal johnny( 101,  "Johnny", "Walker" );
-    std::cout << "( 0 > donald <=> johnny ) -> " << ( 0 > donald <=> johnny )  << std::endl << std::endl;
+
+    std::cout << "( std::strong_ordering::less == donald <=> johnny ) -> " << std::boolalpha
+              << ( std::strong_ordering::less == donald <=> johnny )  << std::endl;
+    std::cout << "( std::strong_ordering::equal == donald <=> johnny ) -> " << std::boolalpha
+              << ( std::strong_ordering::equal == donald <=> johnny )  << std::endl;
+    std::cout << "( std::strong_ordering::greater == donald <=> johnny ) -> " << std::boolalpha
+              << ( std::strong_ordering::greater == donald <=> johnny )  << std::endl;
+
 
     return 0;
 }
