@@ -13,6 +13,7 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${BIN_DIR})
 
 set(TARGET_BEFORE_CPP20 before_cpp20)
 set(TARGET_SPACESHIP_IMPLEMENTATION spaceship_implementation)
+set(TARGET_MULTIPLE_ORDERING_CRITERIA multiple_ordering_criteria)
 
 
 
@@ -26,6 +27,7 @@ set(CMAKE_CXX_FLAGS "-fPIC -O3 -Wall -Wno-unused-function -std=c++20")
 
 set(SOURCES_BEFORE_CPP20 ${SRC_DIR}/ComparisonOperatorsBeforeCpp20.cpp)
 set(SOURCES_SPACESHIP_IMPLEMENTATION ${SRC_DIR}/SpaceshipImplementation.cpp)
+set(SOURCES_MULTIPLE_ORDERING_CRITERIA ${SRC_DIR}/MultipleOrderingCriteria.cpp)
 
 
 
@@ -35,6 +37,7 @@ set(SOURCES_SPACESHIP_IMPLEMENTATION ${SRC_DIR}/SpaceshipImplementation.cpp)
 
 add_executable(${TARGET_BEFORE_CPP20} ${SOURCES_BEFORE_CPP20})
 add_executable(${TARGET_SPACESHIP_IMPLEMENTATION} ${SOURCES_SPACESHIP_IMPLEMENTATION})
+add_executable(${TARGET_MULTIPLE_ORDERING_CRITERIA} ${SOURCES_MULTIPLE_ORDERING_CRITERIA})
 
 
 

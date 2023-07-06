@@ -7,5 +7,6 @@ CMakeFiles/*
 Testing/*
 bin/before_cpp20
 bin/spaceship_implementation
+bin/multiple_ordering_criteria
 build.ninja
 cmake_install.cmake
