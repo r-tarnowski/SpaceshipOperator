@@ -48,6 +48,41 @@ private:
     std::string lastName;
 };
 
+class PersonWeakestCriteria {
+public:
+
+   explicit PersonWeakestCriteria( double valId, const char * pFirstName, const char * pLastName )
+         :  value { valId },
+            firstName( pFirstName ),
+            lastName( pLastName ) {
+   }
+
+   PersonWeakestCriteria() = delete;
+   ~PersonWeakestCriteria() = default;
+
+   std::partial_ordering operator <=> ( const PersonWeakestCriteria & rhs ) const {
+
+      auto cmp1 = lastName <=> rhs.lastName;
+      if ( cmp1 != 0 ) {
+         return cmp1; //strong_ordering converted to return type - partial_ordering
+      }
+
+      auto cmp2 = firstName <=> rhs.firstName;
+      if ( cmp2 != 0 ) {
+         return cmp2;
+      }
+
+      return value <=> rhs.value;
+   }
+
+private:
+   double value;
+   std::string firstName;
+   std::string lastName;
+};
+
+
+
 int main( int argc, char *argv[] ) {
     printHeader();
 
@@ -60,6 +95,17 @@ int main( int argc, char *argv[] ) {
               << ( std::strong_ordering::equal == donald <=> johnny )  << std::endl;
     std::cout << "( std::strong_ordering::greater == donald <=> johnny ) -> " << std::boolalpha
               << ( std::strong_ordering::greater == donald <=> johnny )  << std::endl;
+
+   cout << "---------------------------------------------------------------------------------" << endl;
+   PersonWeakestCriteria donaldWeakest( 102.1,  "Donald", "Duck" );
+   PersonWeakestCriteria johnnyWeakest( 101.1,  "Johnny", "Walker" );
+
+   std::cout << "( std::partial_ordering::less == donaldWeakest <=> johnnyWeakest ) -> " << std::boolalpha
+             << ( std::partial_ordering::less == donaldWeakest <=> johnnyWeakest )  << std::endl;
+   std::cout << "( std::partial_ordering::equivalent == donaldWeakest <=> johnnyWeakest ) -> " << std::boolalpha
+             << ( std::partial_ordering::equivalent == donaldWeakest <=> johnnyWeakest )  << std::endl;
+   std::cout << "( std::partial_ordering::greater == donaldWeakest <=> johnnyWeakest ) -> " << std::boolalpha
+             << ( std::partial_ordering::greater == donaldWeakest <=> johnnyWeakest )  << std::endl;
 
 
     return 0;
