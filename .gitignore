@@ -9,5 +9,6 @@ bin/before_cpp20
 bin/spaceship_implementation
 bin/multiple_ordering_criteria
 bin/lexicographical_compare_three_way
+bin/compatibility_issues
 build.ninja
 cmake_install.cmake
